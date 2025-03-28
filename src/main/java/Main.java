@@ -35,47 +35,53 @@ public class Main {
 //        lada.makeBeBe();
 
 
-        Scanner scanner = new Scanner(System.in);
-        final float rate = 0.07f;
-        float deposit = 0;
-        int month = 0;
+//        Scanner scanner = new Scanner(System.in);
+//        final float rate = 0.07f;
+//        float deposit = 0;
+//        int month = 0;
+//
+//        while (true) {
+//            try {
+//                System.out.println("Введите сумму вклада: ");
+//                deposit = scanner.nextFloat();
+//                if (deposit <= 0) {
+//                    System.out.println("Сумма вклада должна быть больше нуля!");
+//                    continue;
+//                } break;
+//            } catch (InputMismatchException e){
+//                System.out.println("Введите число!");
+//                scanner.next();
+//            }
+//        }
+//
+//        while (true) {
+//            try {
+//                System.out.println("Введите количество месяцев: ");
+//                month = scanner.nextInt();
+//                if (month <= 0) {
+//                    System.out.println("Количество меясцев должно быть больше нуля!");
+//                    continue;
+//                } break;
+//            } catch (InputMismatchException e) {
+//                System.out.println("Введите целое число");
+//                scanner.next();
+//            }
+//        }
+//
+//
+//        for (int i = 0; i < month; i++) {
+//            deposit += deposit * rate;
+//        }
 
-        while (true) {
-            try {
-                System.out.println("Введите сумму вклада: ");
-                deposit = scanner.nextFloat();
-                if (deposit <= 0) {
-                    System.out.println("Сумма вклада должна быть больше нуля!");
-                    continue;
-                } break;
-            } catch (InputMismatchException e){
-                System.out.println("Введите число!");
-                scanner.next();
-            }
-        }
+//        System.out.println("По итогам " + month + " месяцев общая сумма вклада стала " + deposit);
+//
+//        scanner.close();
 
-        while (true) {
-            try {
-                System.out.println("Введите количество месяцев: ");
-                month = scanner.nextInt();
-                if (month <= 0) {
-                    System.out.println("Количество меясцев должно быть больше нуля!");
-                    continue;
-                } break;
-            } catch (InputMismatchException e) {
-                System.out.println("Введите целое число");
-                scanner.next();
-            }
-        }
+        String [] strings = {"привет", "ПОКА", "гипербола"};
+        System.out.println(strings[0].toUpperCase());
+        System.out.println(strings[1].toLowerCase());
 
-
-        for (int i = 0; i < month; i++) {
-            deposit += deposit * rate;
-        }
-
-        System.out.println("По итогам " + month + " месяцев общая сумма вклада стала " + deposit);
-
-        scanner.close();
+        System.out.println(strings[1].substring(0,3) + " " + strings[1].substring(3));
 
 
     }
