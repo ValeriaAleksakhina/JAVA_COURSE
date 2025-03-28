@@ -77,12 +77,20 @@ public class Main {
 //
 //        scanner.close();
 
+
+
+
         String [] strings = {"привет", "ПОКА", "гипербола"};
+
         System.out.println(strings[0].toUpperCase());
         System.out.println(strings[1].toLowerCase());
 
-        System.out.println(strings[1].substring(0,3) + " " + strings[1].substring(3));
+        for (String str : strings) {
+            if (str.charAt(1) == 'О') {
+                System.out.println(strings[1].substring(0, 3) + " " + strings[1].substring(3));
+            }
 
 
+        }
     }
 }
