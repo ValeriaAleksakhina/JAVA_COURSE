@@ -80,7 +80,7 @@ public class Main {
 
 
 
-        String [] strings = {"привет", "ПОКА", "гипербола"};
+        /*String [] strings = {"привет", "ПОКА", "гипербола"};
 
         System.out.println(strings[0].toUpperCase());
         System.out.println(strings[1].toLowerCase());
@@ -91,6 +91,20 @@ public class Main {
             }
 
 
-        }
+        }*/
+
+        Employee employee = new Employee("Маша", 40000);
+        Manager manager = new Manager("Саша", 60000);
+        Developer developer = new Developer("Паша", 100000);
+
+        employee.work();
+        manager.work();
+        developer.work();
+
+       Shape circle = new Circle();
+       Shape rectangle = new Rectangle();
+
+       circle.draw();
+       rectangle.draw();
     }
 }
