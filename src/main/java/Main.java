@@ -93,7 +93,7 @@ public class Main {
 
         }*/
 
-        Employee employee = new Employee("Маша", 40000);
+      /*  Employee employee = new Employee("Маша", 40000);
         Manager manager = new Manager("Саша", 60000);
         Developer developer = new Developer("Паша", 100000);
 
@@ -105,6 +105,15 @@ public class Main {
        Shape rectangle = new Rectangle();
 
        circle.draw();
-       rectangle.draw();
+       rectangle.draw();*/
+
+        int guitarStrings = MusicData.StringCount.GUITAR_STRING.getCount();
+        int pianoStrings = MusicData.StringCount.PIANO_STRING.getCount();
+
+        Playable guitar = new Guitar();
+        Playable piano = new Piano();
+
+        guitar.play(guitarStrings);
+        piano.play(pianoStrings);
     }
 }
