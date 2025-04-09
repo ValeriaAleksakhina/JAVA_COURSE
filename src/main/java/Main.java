@@ -1,8 +1,11 @@
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        showRandomElement();
 
 //        House myHouse = new House("Квартира", 120);
 //
@@ -78,11 +81,7 @@ public class Main {
 //        scanner.close();
 
 
-
-
-        /*String [] strings = {"привет", "ПОКА", "гипербола"};
-
-        System.out.println(strings[0].toUpperCase());
+        /*System.out.println(strings[0].toUpperCase());
         System.out.println(strings[1].toLowerCase());
 
         for (String str : strings) {
@@ -107,13 +106,22 @@ public class Main {
        circle.draw();
        rectangle.draw();*/
 
-        int guitarStrings = MusicData.StringCount.GUITAR_STRING.getCount();
+       /* int guitarStrings = MusicData.StringCount.GUITAR_STRING.getCount();
         int pianoStrings = MusicData.StringCount.PIANO_STRING.getCount();
 
         Playable guitar = new Guitar();
         Playable piano = new Piano();
 
         guitar.play(guitarStrings);
-        piano.play(pianoStrings);
+        piano.play(pianoStrings);*/
+
     }
+    public static void showRandomElement(){
+        String[] strings = {"привет", "ПОКА", "гипербола"};
+        Random random = new Random();
+        int randomElement = random.nextInt(strings.length);
+        String randomString = strings[randomElement];
+        System.out.println("Случайная строка из массива: " + randomString);
+    }
+
 }
