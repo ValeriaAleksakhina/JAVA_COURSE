@@ -14,6 +14,7 @@ public class FullTest extends BaseTest{
     @DisplayName("Проверка работы строки поиска")
     void searchFieldCheck() {
         wikiPage.openPage(WikiData.getUrl())
+                .waitForTitle()
                 .fillSearchField()
                 .submitButtonClick()
                 .logotypeCheck();

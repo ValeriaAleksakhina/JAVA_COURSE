@@ -1,5 +1,6 @@
 package page;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import data.WikiData;
 import elements.Button;
@@ -7,6 +8,8 @@ import elements.Image;
 import elements.Input;
 import elements.TextField;
 import io.qameta.allure.Step;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
@@ -16,6 +19,8 @@ public class WikiPage {
     private final Input inputSearch = new Input("инпут строки поиска", $x("//div[contains(@class, \"search-header-view\")]//input[@name=\"search\"]"));
     private final Button findButton = new Button("Кнопка Найти", $x("//div[@class=\"search-content\"]"));
     private final Image logo = new Image("Логотип", $x("(//img[@alt=\"Википедия\"])[1]"));
+    private final TextField title = new TextField("Заголовок", $x("//div//h1[@id=\"Добро_пожаловать_в_Википедию,\"]"));
+
 
 
 
@@ -41,6 +46,12 @@ public class WikiPage {
     @Step("Проверяем логотип")
     public WikiPage logotypeCheck() {
         logo.logoCheck();
+        return this;
+    }
+
+    @Step("Ждем появления заголовка")
+    public WikiPage waitForTitle(){
+        title.visibilityCheck();
         return this;
     }
 

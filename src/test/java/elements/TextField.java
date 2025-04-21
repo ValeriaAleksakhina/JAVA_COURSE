@@ -1,7 +1,10 @@
 package elements;
 
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+
+import java.time.Duration;
 
 
 public class TextField {
@@ -16,6 +19,10 @@ public class TextField {
 
     public void textFieldClick(){
         selector.click();
+    }
+
+    public void visibilityCheck(){
+        selector.shouldBe(Condition.visible, Duration.ofSeconds(10));
     }
 
 

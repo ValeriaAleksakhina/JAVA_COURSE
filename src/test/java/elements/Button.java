@@ -16,6 +16,7 @@ public class Button {
 
     public Button buttonClick(){
         selector.shouldBe(Condition.visible, Duration.ofSeconds(10))
+                .shouldBe(Condition.interactable)
                 .click();
         return this;
     }
