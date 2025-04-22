@@ -1,6 +1,7 @@
 package test;
 
 import data.WikiData;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import page.WikiPage;
@@ -20,4 +21,28 @@ public class FullTest extends BaseTest{
                 .logotypeCheck();
 
     }
+
+
+    @Test
+    void exceptionNull() {
+        try {
+            String text = null;
+            System.out.println(text.length());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+
+        }
+    }
+
+    @Test
+    void exceptionAssert() {
+        try {
+            Assertions.assertTrue(false);
+        } catch (AssertionError e) {
+            System.out.println("Условие не соблюдено " + e.getMessage());
+            throw new IllegalArgumentException("Ошибка! Смотри текст сообщения!", e);
+        }
+    }
+
+
 }
