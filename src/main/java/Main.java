@@ -1,11 +1,26 @@
-import java.util.InputMismatchException;
-import java.util.Random;
-import java.util.Scanner;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
 
-        showRandomElement();
+        // создаем первичную коллекцию коробок
+        List<Box> boxes = new ArrayList<>();
+        boxes.add(new Box(10, 10, 10));
+        boxes.add(new Box(40, 20, 20));
+        boxes.add(new Box(35, 20, 20));
+
+        // Вводим новую пустую коллекцию отфильтрованных коробок
+        List<Box> bigBoxes = filterBoxes(boxes);
+
+        // Выводим новую коллекцию
+        System.out.println(bigBoxes);
+
+
+
+       // showRandomElement();
 
 //        House myHouse = new House("Квартира", 120);
 //
@@ -116,12 +131,27 @@ public class Main {
         piano.play(pianoStrings);*/
 
     }
-    public static void showRandomElement(){
-        String[] strings = {"привет", "ПОКА", "гипербола"};
-        Random random = new Random();
-        int randomElement = random.nextInt(strings.length);
-        String randomString = strings[randomElement];
-        System.out.println("Случайная строка из массива: " + randomString);
+//    public static void showRandomElement(){
+//        String[] strings = {"привет", "ПОКА", "гипербола"};
+//        Random random = new Random();
+//        int randomElement = random.nextInt(strings.length);
+//        String randomString = strings[randomElement];
+//        System.out.println("Случайная строка из массива: " + randomString);
+
+
+
+    // Создаем метод, который пройдет циклом по всем элементам первичной коллекции, отфильтрует те,
+    // что более 30 см и положит в новую коллекцию
+    public static List<Box> filterBoxes(List<Box> boxes) {
+        List<Box> bigBoxes = new ArrayList<>();
+        for (Box box : boxes) {
+            if (box.getWidth() > 30) {
+                bigBoxes.add(box);
+            }
+        }
+        return bigBoxes;
     }
+
+
 
 }
